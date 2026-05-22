@@ -13,7 +13,7 @@ class User(Base):
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=datetime.utcnow)
     
-    student_profile = relationship("StudentProfile", back_populates="user", uselist=False)
+    student_profile = relationship("StudentProfile", back_populates="user", uselist=False, foreign_keys="StudentProfile.id")
     audit_logs = relationship("AuditLog", back_populates="user")
 
 class StudentProfile(Base):
@@ -48,7 +48,7 @@ class StudentProfile(Base):
     
     created_at = Column(DateTime, default=datetime.utcnow)
     
-    user = relationship("User", back_populates="student_profile")
+    user = relationship("User", back_populates="student_profile", foreign_keys=[id])
     tasks = relationship("Task", back_populates="student")
 
 class Task(Base):
