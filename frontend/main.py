@@ -10,11 +10,11 @@ from backend.database.connection import SessionLocal
 from backend.models.db_models import User
 
 # Pages Router Imports
-from pages.admin_dashboard import render_admin
-from pages.manager_dashboard import render_manager
-from pages.counselor_dashboard import render_counselor
-from pages.student_dashboard import render_student
-
+# Change your dashboard imports to look exactly like this:
+from frontend.pages.admin_dashboard import render_admin
+from frontend.pages.manager_dashboard import render_manager
+from frontend.pages.counselor_dashboard import render_counselor
+from frontend.pages.student_dashboard import render_student
 st.set_page_config(page_title="Uppseekers OS", layout="wide", initial_sidebar_state="expanded")
 
 auth_mgr = AuthenticationManager()
