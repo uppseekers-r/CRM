@@ -1,3 +1,9 @@
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+import streamlit as st
+# ... leave the rest of your file exactly the same
 import streamlit as st
 from backend.auth.supabase_auth import AuthenticationManager
 from backend.database.connection import SessionLocal
